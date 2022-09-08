@@ -1,0 +1,68 @@
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+body {
+  font-family: "League Spartan", sans-serif;
+  font-size: 32px;
+}
+
+a,
+a::after,
+a::before,
+a:hover {
+  text-decoration: none;
+  color: #000;
+}
+
+main {
+  padding: 3.125rem;
+}
+main .toggle {
+  display: none;
+  position: absolute;
+  top: -500rem;
+  left: -500rem;
+}
+main .toggle + label {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+main .toggle + label::before {
+  content: "";
+  width: 64px;
+  height: 32px;
+  background-color: rgba(221, 221, 221, 0.8666666667);
+  border-radius: 16px;
+  margin-right: 16px;
+}
+main .toggle:checked + label::before {
+  background-color: beige;
+  transition: background-color 300ms ease-in-out;
+}
+main .toggle + label::after {
+  content: "";
+  position: absolute;
+  left: 0.25rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  background-color: #d03f2f;
+  border-radius: 16px;
+  margin-right: 16px;
+  transform: translateX(0%);
+  transition: transform 0.2s ease;
+}
+main .toggle:checked + label::after {
+  transform: translateX(100%);
+  transition: transform 0.2s ease;
+}/*# sourceMappingURL=style.css.map */
