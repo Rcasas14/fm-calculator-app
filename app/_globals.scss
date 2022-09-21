@@ -16,10 +16,46 @@ body {
 
 }
 
+:root{
+    --placeholder-color: #fff;
+    --bg-display: #182034;
+    --del-button: #3a4764;
+    --reset-button: #3a4764;
+    --equals-button: #d03f2f;
+    --toggle-color: #d03f2f;
+    --bg-key: #232c43;
+    --bg-text: #444b5a;
+    --bg-toggle: #232c43;
+}
+
 a,
 a::after,
 a::before,
 a:hover {
     text-decoration: none;
     color: #000;
+}
+
+.body-bg {
+    background-color: #3a4764;
+}
+
+button {
+    cursor: pointer;
+}
+
+.font-fam{
+    font-family: $league-spartan;
+}
+
+.font-size{
+    font-size: 32px;
+}
+
+.color-white{
+    color: $white;
+}
+
+.d-none {
+    display: none;
 }

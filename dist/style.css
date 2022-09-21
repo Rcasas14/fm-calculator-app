@@ -15,6 +15,18 @@ body {
   font-size: 32px;
 }
 
+:root {
+  --placeholder-color: #fff;
+  --bg-display: #182034;
+  --del-button: #3a4764;
+  --reset-button: #3a4764;
+  --equals-button: #d03f2f;
+  --toggle-color: #d03f2f;
+  --bg-key: #232c43;
+  --bg-text: #444b5a;
+  --bg-toggle: #232c43;
+}
+
 a,
 a::after,
 a::before,
@@ -23,46 +35,160 @@ a:hover {
   color: #000;
 }
 
-main {
-  padding: 3.125rem;
+.body-bg {
+  background-color: #3a4764;
 }
-main .toggle {
-  display: none;
-  position: absolute;
-  top: -500rem;
-  left: -500rem;
-}
-main .toggle + label {
+
+button {
   cursor: pointer;
-  position: relative;
+}
+
+.font-fam {
+  font-family: "League Spartan", sans-serif;
+}
+
+.font-size {
+  font-size: 32px;
+}
+
+.color-white {
+  color: #fff;
+}
+
+.d-none {
+  display: none;
+}
+
+.main {
+  min-width: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 }
-main .toggle + label::before {
-  content: "";
-  width: 64px;
-  height: 32px;
-  background-color: rgba(221, 221, 221, 0.8666666667);
-  border-radius: 16px;
-  margin-right: 16px;
+.main .calculator-container {
+  min-width: 500px;
+  padding: 0px 33px;
 }
-main .toggle:checked + label::before {
-  background-color: beige;
-  transition: background-color 300ms ease-in-out;
+.main .calc-head {
+  display: flex;
+  justify-content: space-between;
 }
-main .toggle + label::after {
-  content: "";
-  position: absolute;
-  left: 0.25rem;
-  width: 1.8rem;
-  height: 1.8rem;
-  background-color: #d03f2f;
-  border-radius: 16px;
-  margin-right: 16px;
-  transform: translateX(0%);
-  transition: transform 0.2s ease;
+.main .theme {
+  flex: 1;
+  font-size: 12px;
+  padding-top: 14px;
+  align-self: end;
+  text-align: right;
+  padding: 5px 15px;
 }
-main .toggle:checked + label::after {
-  transform: translateX(100%);
-  transition: transform 0.2s ease;
+.main .calc {
+  flex: 5;
+  font-size: 24px;
+  align-self: end;
+}
+.main .button {
+  height: 12px;
+  width: 12px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: var(--toggle-color);
+  border-radius: 50%;
+  opacity: 0;
+  margin: 3px 0;
+  outline: none;
+}
+.main input:hover {
+  cursor: pointer;
+}
+.main .tri-state-toggle {
+  display: flex;
+  justify-content: center;
+  background-color: var(--bg-toggle);
+  border-radius: 50px;
+  width: 50px;
+}
+.main #one {
+  opacity: 1;
+}
+.main .theme-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  flex: 1;
+}
+.main .theme-content span {
+  font-size: 12px;
+}
+.main .theme-numbers {
+  padding: 0 0.55rem;
+}
+.main .display-content {
+  min-width: 100%;
+  text-align: center;
+  margin: 25px 0;
+}
+.main .display-num {
+  background-color: var(--bg-display);
+  border: none;
+  width: 435px;
+  min-height: 80px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 10px;
+  font-size: 50px;
+  padding: 15px;
+  text-align: right;
+  color: var(--placeholder-color);
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.main ::-moz-placeholder {
+  color: var(--placeholder-color);
+}
+.main :-ms-input-placeholder {
+  color: var(--placeholder-color);
+}
+.main ::placeholder {
+  color: var(--placeholder-color);
+}
+.main .calc-buttons-cont {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  row-gap: 27px;
+  background-color: var(--bg-key);
+  padding: 30px;
+  border-radius: 20px;
+}
+.main .calc-button {
+  padding: 6px 0;
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  color: var(--bg-text);
+}
+.main .del-button {
+  padding: 6px 13px;
+  background-color: var(--del-button);
+  color: #fff;
+}
+.main .calc-reset {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-end: 6;
+  background-color: var(--reset-button);
+  color: #fff;
+}
+.main .calc-equals {
+  grid-column-start: 5;
+  grid-column-end: 3;
+  grid-row-end: 6;
+  background-color: var(--equals-button);
+  color: #fff;
+}
+.main .calc-equals:hover {
+  opacity: 1.5;
 }/*# sourceMappingURL=style.css.map */

@@ -1,52 +1,167 @@
-main {
-    padding: 3.125rem;
+.main {
+    min-width: 100%;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    
 
-    .toggle {
-        //opacity: 0;
-        display: none;
-        position: absolute;
-        top: -500rem;
-        left: -500rem;
-        
-        &+label {
-            cursor: pointer;
-            position: relative;
-            display: flex;
-            align-items: center;
-        }
 
-        &+label::before {
-            content: "";
-            width: 64px;
-            height: 32px;
-            background-color: #dddd;
-            border-radius: 16px;
-            margin-right: 16px;
-        }
 
-        &:checked+label::before {
-            background-color: beige;
-            transition: background-color 300ms ease-in-out;
-        }
+    .calculator-container {
+        min-width: 500px;
+        padding: 0px 33px;
 
-        &+label::after {
-            content: "";
-            position: absolute;
-            left: 0.25rem;
-            width: 1.8rem;
-            height: 1.8rem;
-            background-color: $red;
-            border-radius: 16px;
-            margin-right: 16px;
-            transform: translateX(0%);
-            transition: transform 0.2s ease;
-        }
+    }
 
-        &:checked+label::after {
-            transform: translateX(100%);
-            transition: transform 0.2s ease;
+    .calc-head {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .theme {
+        flex: 1;
+        font-size: 12px;
+        padding-top: 14px;
+        align-self: end;
+        text-align: right;
+        padding: 5px 15px;
+    }
+
+
+    .calc {
+        flex: 5;
+        font-size: 24px;
+        align-self: end;
+
+    }
+
+    .button {
+        height: 12px;
+        width: 12px;
+        appearance: none;
+        background-color: var(--toggle-color); // variable
+        border-radius: 50%;
+        opacity: 0;
+        margin: 3px 0;
+        outline: none;
+
+    }
+
+    input:hover {
+        cursor: pointer;
+    }
+
+    .tri-state-toggle {
+        display: flex;
+        justify-content: center;
+        background-color: var(--bg-toggle); //variable
+        border-radius: 50px;
+        width: 50px;
+
+
+    }
+
+    #one {
+        opacity: 1;
+    }
+
+    .theme-content {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        flex: 1;
+
+        span {
+            font-size: 12px;
         }
     }
+
+    .theme-numbers {
+        padding: 0 0.55rem;
+
+    }
+
+    .display-content {
+        min-width: 100%;
+        text-align: center;
+        margin: 25px 0;
+    }
+
+    .display-num {
+        background-color: var(--bg-display); //--variable
+
+        border: none;
+        width: 435px;
+        min-height: 80px;
+        height: auto;
+        margin: 0 auto;
+        border-radius: 10px;
+        font-size: 50px;
+        // padding-right: 15px;
+        padding: 15px;
+        text-align: right;
+        color: var(--placeholder-color);
+        word-wrap: break-word;
+        word-break: break-all;
+
+
+    }
+
+    ::placeholder {
+        color: var(--placeholder-color);
+
+    }
+
+
+    .calc-buttons-cont {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        column-gap: 20px;
+        row-gap: 27px;
+        background-color: var(--bg-key);
+        padding: 30px;
+        border-radius: 20px;
+    }
+
+    .calc-button {
+        padding: 6px 0;
+        border: none;
+        border-radius: 6px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        color: var(--bg-text);
+    }
+
+    .del-button {
+        padding: 6px 13px;
+        background-color: var(--del-button);
+        color: $white;
+    }
+
+    .calc-reset {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-end: 6;
+        background-color: var(--reset-button);
+        color: $white;
+    }
+
+    .calc-equals {
+        grid-column-start: 5;
+        grid-column-end: 3;
+        grid-row-end: 6;
+        background-color: var(--equals-button);
+        color: $white;
+
+        &:hover {
+            opacity: 1.5;
+        }
+    }
+
 
 
 }

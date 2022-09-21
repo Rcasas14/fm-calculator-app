@@ -14,15 +14,63 @@
   <title>Calculator app</title>
 </head>
 
-<body>
-  <main>
-    <input type="checkbox" id="check" class="toggle">
-    <label for="check">Check</label>
-  </main>
+<body class="body-bg">
+  <div class = "main">
+
+    <div class="calculator-container">
+      <div class="calc-head">
+        <h3 class="calc color-white">calc</h3>
+        <p class="theme color-white">THEME</p>
+        <div class="theme-content">
+          <div class="theme-numbers">
+            <span class="span color-white">1</span>
+            <span class="span color-white">2</span>
+            <span class="span color-white">3</span>
+          </div>
+          <div class="tri-state-toggle" id="radio-toggle">
+            <input class="button" type="radio" name="toggle" id="one" />
+            <input class="button" type="radio" name="toggle" id="two" />
+            <input class="button" type="radio" name="toggle" id="three" />
+          </div>
+        </div>
+      </div>
+
+      <div class="display-content">
+        <!-- <input data-current id="display-output" type="text" name="calc-output" class="display-num font-fam d-none" placeholder="" readonly> -->
+        <div data-current class="display-num font-fam" id="display-output"></div>
+        <input data-previous id="display-output" type="text" name="calc-output" class="display-num font-fam d-none" placeholder="" readonly>
+      </div>
+
+      <div class="calc-buttons-cont">
+        <button data-number class="calc-button font-fam font-size" id="but-seven">7</button>
+        <button data-number class="calc-button font-fam font-size" id="but-eight">8</button>
+        <button data-number class="calc-button font-fam font-size" id="but-nine">9</button>
+        <button data-delete class="calc-button font-fam font-size del-button" id="but-del">DEL</button>
+        <button data-number class="calc-button font-fam font-size" id="but-four">4</button>
+        <button data-number class="calc-button font-fam font-size" id="but-five">5</button>
+        <button data-number class="calc-button font-fam font-size" id="but-six">6</button>
+        <button data-operation class="calc-button font-fam font-size" id="but-plus">+</button>
+        <button data-number class="calc-button font-fam font-size" id="but-one">1</button>
+        <button data-number class="calc-button font-fam font-size" id="but-two">2</button>
+        <button data-number class="calc-button font-fam font-size" id="but-three">3</button>
+        <button data-operation class="calc-button font-fam font-size" id="but-minus">-</button>
+        <button data-number class="calc-button font-fam font-size" id="but-dot">.</button>
+        <button data-number class="calc-button font-fam font-size" id="but-zero">0</button>
+        <button data-operation class="calc-button font-fam font-size" id="but-divide">/</button>
+        <button data-operation class="calc-button font-fam font-size" id="but-multiply">x</button>
+
+        <button data-reset class="calc-button font-fam font-size calc-reset" id="but-reset">RESET</button>
+        <button data-equals class="calc-button font-fam font-size calc-equals" id="but-equals">=</button>
+
+      </div>
+
+    </div>
+  </div>
 
 
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-  <script src="script.js"></script>
+  <script src="js/dom.js"></script>
+  <script src="js/script.js"></script>
 </body>
 
 </html>
